@@ -5,10 +5,7 @@ var path = require('path');
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
   entry: {
-      
     main : [
-      'webpack-hot-middleware/client?http:localhost:9000',
-      'webpack/hot/only-dev-server',
       './app/index'
     ],
     vendor : [
@@ -32,7 +29,7 @@ module.exports = {
         "process.env": {
           NODE_ENV: JSON.stringify("development")
       }}),
-     new webpack.HotModuleReplacementPlugin()
+     new webpack.HotModuleReplacementPlugin(),
   ],
   module: {
     loaders: [

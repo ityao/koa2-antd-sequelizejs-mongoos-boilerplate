@@ -22,23 +22,20 @@ export default function middleware(app) {
     log4js.configure({
         appenders: [
             { type: 'console' },
-            { type: 'dateFile', filename: __dirname + '/../tmp/boilerplate.log' , "pattern":"-yyyy-MM-dd-hh.log","alwaysIncludePattern":false, category: 'file' }
+            { type: 'dateFile', filename: __dirname + '/../../logs/boilerplate.log' , "pattern":"-yyyy-MM-dd-hh.log","alwaysIncludePattern":false, category: 'file' }
         ],
         replaceConsole: true
     });
 
-    app.use(cors({ credentials: true }));
+    app.use(cors({ credentials: true }))
     app.use(convert(Logger()))
     app.use(bodyParser())
-    app.use(mount("/", convert(Serve(__dirname + '/../public/'))));
+    app.use(mount("/", convert(Serve(__dirname + '/../public/'))))
+    app.keys = ['silver-2016-session-key']
 
-    app.keys = ['superalsrk-session-key'];
     app.use(convert(session()))
-
     app.use(passport.initialize())
     app.use(passport.session())
-    
-    //app.use(views(__dirname + '/../views', {extension: 'swig'}))
     app.use(views(__dirname + '/../views', {extension: 'ejs'}))
 
 }

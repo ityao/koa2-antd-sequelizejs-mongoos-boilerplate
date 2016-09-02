@@ -4,7 +4,8 @@
   "description": "",
   "main": "start.js",
   "scripts": {
-    "dev": "pm2 start pm2_dev.json | webpack-dev-server --progress --colors --hot --host 0.0.0.0 --port 9000 --content-base ./server/public --config ./webpack.config.js",
+    "pm2": "pm2 start pm2_dev.json",
+    "dev": "webpack-dev-server --progress --colors --hot --inline --host 0.0.0.0 --port 9000 --content-base ./server/public --config ./webpack.config.js",
     "build": "NODE_ENV=production webpack -p --config ./webpack.prod.config.js",
     "test": "mocha --compilers js:babel-core/register --require babel-polyfill",
     "report": "mocha --compilers js:babel-core/register --require babel-polyfill --reporter mochawesome"

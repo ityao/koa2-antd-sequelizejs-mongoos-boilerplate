@@ -1,10 +1,10 @@
 {
-  "name": "koa2-boilerplate",
-  "version": "1.0.0",
+  "name": "koa2-antd-sequelizejs-mongoos-boilerplate",
+  "version": "0.0.1",
   "description": "",
   "main": "start.js",
   "scripts": {
-    "dev": "webpack-dev-server --progress --colors --hot --host 0.0.0.0 --port 9000 --content-base ./server/public --config ./webpack.config.js | nodemon start.js",
+    "dev": "pm2 start pm2_dev.json | webpack-dev-server --progress --colors --hot --host 0.0.0.0 --port 9000 --content-base ./server/public --config ./webpack.config.js",
     "build": "NODE_ENV=production webpack -p --config ./webpack.prod.config.js",
     "test": "mocha --compilers js:babel-core/register --require babel-polyfill",
     "report": "mocha --compilers js:babel-core/register --require babel-polyfill --reporter mochawesome"
@@ -17,7 +17,7 @@
     "koa2 with redux",
     "koa2 with docker"
   ],
-  "author": "SRK.Lyu <superalsrk@gmail.com> (http://stackbox.org)",
+  "author": "Silver.Lao <silver.lao@gmail.com> (http://www.fujin8.com)",
   "license": "MIT",
   "dependencies": {
     "amqplib": "^0.4.2",
@@ -46,7 +46,7 @@
     "passport-local": "^1.0.0",
     "path": "^0.12.7",
     "request": "^2.73.0",
-    "swig": "^1.4.2"
+    "ejs": "^2.5.1"
   },
   "devDependencies": {
     "babel-cli": "^6.10.1",

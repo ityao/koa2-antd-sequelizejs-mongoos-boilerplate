@@ -1,0 +1,19 @@
+{
+  "apps": [{
+    "name": "fujin8_prod",
+    "script": "start.js",
+    "watch": false,
+    "merge_logs": true,
+    "log_date_format": "YYYY-MM-DD HH:mm",
+    "env": {
+      "NODE_ENV": "production",
+      "PORT": "7878"
+    },
+    "max_memory_restart": "700M",
+    "instances"  : 1,
+    "exec_mode"  : "cluster_mode",
+    "error_file": "logs/server-prod-err.log",
+    "out_file": "logs/server-prod-out.log",
+    "pid_file": "logs/server-prod.pid"
+  }]
+}

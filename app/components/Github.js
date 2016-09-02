@@ -9,7 +9,7 @@ class Github extends React.Component {
                         color="green"
                         href="//github.com/superalsrk/koa2-boilerplate" 
                         target="_blank" > 
-            Fork me on GitHub 
+            Fork me on GitHub
         </GitHubForkRibbon> 
     )
   }

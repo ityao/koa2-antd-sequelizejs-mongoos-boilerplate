@@ -38,6 +38,7 @@ export default function middleware(app) {
     app.use(passport.initialize())
     app.use(passport.session())
     
-    app.use(views(__dirname + '/../views', {extension: 'swig'}))
+    //app.use(views(__dirname + '/../views', {extension: 'swig'}))
+    app.use(views(__dirname + '/../views', {extension: 'ejs'}))
 
 }

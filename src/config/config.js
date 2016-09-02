@@ -14,8 +14,8 @@ let base = {
 let specific = {
     development: {
         app: {
-            port: 5000,
-            name: "koa2-boilerplate - Dev",
+            port: process.env.PORT || 5000,
+            //name: "fujin8-Dev",
             excluded : "excluded_path"
         },
         mysql: {
@@ -29,7 +29,7 @@ let specific = {
     production: {
         app: {
             port: process.env.PORT || 5000,
-            name: "koa2-boilerplate",
+            //name: "koa2-boilerplate",
             excluded : "excluded_path"
         },
         mysql: {

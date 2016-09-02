@@ -1,0 +1,20 @@
+{
+  "apps": [{
+    "name": "fujin8_dev",
+    "script": "./start.js",
+    "watch": ["src"],
+    "merge_logs": true,
+    "log_date_format": "YYYY-MM-DD HH:mm",
+    "env": {
+      "NODE_ENV": "development",
+      "PORT": "5001"
+    },
+    "max_memory_restart"  : "500M",
+    "instances"           : 1,
+    "max_restarts"        : 10,
+    "exec_mode"           : "cluster_mode",
+    "error_file"          : "logs/server-dev-err.log",
+    "out_file"            : "logs/server-dev-out.log",
+    "pid_file"            : "logs/server-dev.pid"
+  }]
+}

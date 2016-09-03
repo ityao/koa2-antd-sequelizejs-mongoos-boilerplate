@@ -30,7 +30,7 @@ export function authUser(authinfo) {
                 async : true,
                 success: function(data, status, xhr) {
                     if(data.status == 400) {
-                        alert('Login errro, username/password is test/test')
+                        alert('Login error, username/password is test/test')
                         dispatch({
                             type : types.AUTH_FAILED
                         })

@@ -1,35 +1,33 @@
 'use strict';
-
-import db from '../lib/db';
 import log4js from 'log4js';
+import {User} from './mysql/index';
 
 const Account = {}
 const LOG = log4js.getLogger('file');
 
-Account.findOne = function (id, cb) {
-    // db.queryAsync('select * from t_account where id = ?', [id], function(err, results) {
-    //     if(results == null || results.length == 0) {
-    //         err = Error('empty')
-    //     }
-    //     cb(err, results[0])
-    // })
-    
+Account.findOne = async function (id, cb) {
+
+    return await User.findById(id)
+
     //Mock Scripts
+    /*
     const account = {"id": 1, "username" : "test", "password" : "test"}
-    cb(null, account) 
+    cb(null, account)
+    */
 
 }
 
 Account.verify = async function(username, password) {
 
-    //let account = await db.query('select * from t_account where email = ?', [username])
-
-    LOG.warn(JSON.stringify({
-        'username' : username,
-        'password' : password
-    }))
+  //let account = await db.query('select * from t_account where email = ?', [username])
+  LOG.warn("enter verify: "+JSON.stringify({'username' : username,'password' : password}))
+  let user = await User.findOne({where:{username:username,password:password}})
+  user = user.toJSON()
+  LOG.warn("user:",user)
+  return user
 
     //Mock Scripts
+    /*
     let account = [{"id": 1, "username" : "test", "password" : "test"}]
 
     if(account == null || account.length != 1) {
@@ -40,7 +38,8 @@ Account.verify = async function(username, password) {
         } else {
             return null;
         }
-    }
+    }*/
+
 }
 
 export default Account;

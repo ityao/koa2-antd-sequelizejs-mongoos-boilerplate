@@ -13,7 +13,7 @@
     "instances"  : 1,
     "exec_mode"  : "cluster_mode",
     "error_file": "logs/server-prod-err.log",
-    "out_file": "logs/server-prod-out.log",
+    //"out_file": "logs/server-prod-out.log",
     "pid_file": "logs/server-prod.pid"
   }]
 }

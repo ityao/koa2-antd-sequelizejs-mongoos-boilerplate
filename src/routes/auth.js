@@ -11,7 +11,6 @@ router.get('/login', async (ctx, next) => {
     }   
 })
 
-
 router.post('/login', async (ctx, next) => {
     let middleware = passport.authenticate('local', async(user, info) => {
         if (user === false) {

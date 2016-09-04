@@ -1,9 +1,6 @@
 'use strict';
-
-
 import {Sequelize,orm} from './../../lib/sequelize';
-import log4js from 'log4js';
-const LOG = log4js.getLogger('file');
+import {LOG} from './../../lib/logger';
 
 var User = orm.define('user', {
   id: {
@@ -25,10 +22,12 @@ var User = orm.define('user', {
 });
 
 //初始化
-User.sync({force: true}).then(function () {
-  // Table created
-  LOG.debug("mysql inited data!!!",arguments);
-  User.create({"username" : "test", "password" : "test"});
+User.sync({force: false}).then(async()=>{
+  let admin = await User.findById(1);
+  if (!admin){
+    User.create({"username" : "test", "password" : "test"});
+    LOG.debug("mysql reinited data!!!");
+  }
 })
 
 export default User;

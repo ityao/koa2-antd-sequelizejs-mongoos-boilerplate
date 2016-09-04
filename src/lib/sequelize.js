@@ -3,8 +3,7 @@
 import Sequelize from 'sequelize'
 import cls from 'continuation-local-storage'
 import config from './../config/config'
-import log4js from 'log4js';
-const LOG = log4js.getLogger('file');
+import {LOG} from './logger';
 
 let orm;
 
@@ -21,9 +20,9 @@ if (!orm){
   LOG.debug("sequelize inited once!!!");
 }
 
-LOG.debug("sequelize inited return!!!");
-
 // Add transaction support
+// http://stackoverflow.com/questions/38069797/easy-way-to-handle-nested-transactions
+
 let namespace = Sequelize.cls = cls.createNamespace('fujin8.com');
 const trans = option => operation => async function () {
   let t = namespace.get('transaction');
@@ -39,8 +38,8 @@ const trans = option => operation => async function () {
     throw e;
   }
 };
-/*
-* Usage sample for trans:
+
+/* Usage sample for trans:
 
 export const createSchool = trans()( async (name, accountProps) => {
     let school = await SchoolModel.create({name});
@@ -48,7 +47,7 @@ export const createSchool = trans()( async (name, accountProps) => {
     return {school, teacher};
 });
 
-* */
+*/
 
 //export default sequelize
 module.exports = {

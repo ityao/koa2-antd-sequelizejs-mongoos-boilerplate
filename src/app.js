@@ -5,17 +5,9 @@ import baseconfig from './config/base'
 import middleware from './middleware'
 import routes from './routes'
 import config from './config/config'
-import log4js from 'log4js'
+import {LOG} from './lib/logger'
 
 const app = new Koa()
-
-//configure log level
-const LOG = log4js.getLogger('file')
-if(process.env.NODE_ENV == "development"){
-  LOG.setLevel('DEBUG')
-}else{
-  LOG.setLevel('ERROR')
-}
 
 //configure basic app
 baseconfig(app)

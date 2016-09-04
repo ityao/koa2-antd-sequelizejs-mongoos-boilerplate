@@ -1,9 +1,8 @@
 'use strict';
-import log4js from 'log4js';
+import {LOG} from '../lib/logger';
 import {User} from './mysql/index';
 
 const Account = {}
-const LOG = log4js.getLogger('file');
 
 Account.findOne = async function (id, cb) {
 

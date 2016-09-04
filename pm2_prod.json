@@ -4,7 +4,7 @@
     "script": "start.js",
     "watch": false,
     "merge_logs": true,
-    "log_date_format": "YYYY-MM-DD HH:mm",
+    //"log_date_format": "YYYY-MM-DD HH:mm",
     "env": {
       "NODE_ENV": "production",
       "PORT": "7878"
@@ -13,7 +13,7 @@
     "instances"  : 1,
     "exec_mode"  : "cluster_mode",
     "error_file": "logs/server-prod-err.log",
-    //"out_file": "logs/server-prod-out.log",
+    "out_file": "logs/server-prod-out.log",
     "pid_file": "logs/server-prod.pid"
   }]
 }

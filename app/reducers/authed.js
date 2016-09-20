@@ -1,6 +1,4 @@
-import $ from 'jquery';
 import * as types from '../constants/ActionTypes';
-
 
 const auth = (state = [], action) => {
     switch(action.type) {

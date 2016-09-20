@@ -22,6 +22,6 @@ var Session = orm.define('session', {
 });
 
 //自动创建
-Session.sync({force:true})
+//Session.sync({force:true})
 
 export default Session;

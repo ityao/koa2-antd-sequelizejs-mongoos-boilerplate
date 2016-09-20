@@ -1,7 +1,7 @@
 'use strict';
 
 import passport from 'koa-passport';
-import AccountModel from '../models/account'
+import Account from '../models/account'
 import {LOG} from '../lib/logger'
 
 var LocalStrategy = require('passport-local').Strategy
@@ -12,7 +12,7 @@ passport.serializeUser(function(user, done) {
 
 passport.deserializeUser(function(id, done) {
   //LOG.debug("passport deserializeUser:", id);
-  AccountModel.findOne(id).then((user)=>{
+  Account.findOne(id).then((user)=>{
     done(null, user)
   }).catch((err)=>{
     done(err)
@@ -22,7 +22,7 @@ passport.deserializeUser(function(id, done) {
 
 passport.use(new LocalStrategy(function(username, password, done) {
   
-  AccountModel.verify(username, password).then(function(result) {
+  Account.verify(username, password).then(function(result) {
     //LOG.debug("passport verify:", result.id, result.username);
     if(result != null) {
         done(null, result)

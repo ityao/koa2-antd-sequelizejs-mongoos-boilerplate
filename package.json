@@ -50,7 +50,8 @@
     "passport-local": "^1.0.0",
     "path": "^0.12.7",
     "request": "^2.73.0",
-    "ejs": "^2.5.1"
+    "ejs": "^2.5.1",
+    "koa2-wechat": "^0.0.2"
   },
   "devDependencies": {
     "babel-cli": "^6.10.1",

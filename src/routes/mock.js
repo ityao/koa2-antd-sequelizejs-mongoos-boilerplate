@@ -8,6 +8,8 @@ const router = new Router();
 
 router.get('/summary', async (ctx, next) => {
 
+    console.log("hihi===>");
+
     let pv = Math.floor(Math.random() * 2000000) + 1500000;
     let uv = Math.floor(pv/3)
     let bounceRate = (Math.random()*30 + 15) + ''

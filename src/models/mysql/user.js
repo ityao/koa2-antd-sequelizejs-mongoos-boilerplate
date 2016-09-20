@@ -22,12 +22,15 @@ var User = orm.define('user', {
 });
 
 //初始化
+/*
 User.sync({force: false}).then(async()=>{
   let admin = await User.findById(1);
   if (!admin){
     User.create({"username" : "test", "password" : "test"});
     LOG.debug("mysql reinited data!!!");
   }
-})
+})*/
+
+
 
 export default User;

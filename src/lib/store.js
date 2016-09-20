@@ -1,6 +1,6 @@
 'use strict';
 import config from './../config/config'
-import {LOG} from './logger';
+import {LOG} from './logger'
 import {Store} from "koa-session2"
 import {Session} from './../models/mysql'
 

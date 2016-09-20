@@ -9,6 +9,12 @@ let base = {
     root: path.normalize(path.join(__dirname, "/..")),
     env: env,
   },
+  wechat:{ //微信设置
+    wx662592676e87925d:{
+      token:"fujin8",
+      encodingAESKey: '11sNHh0nVgegMksNaWBQfXC5mj8GINS8OpEo0jBZkQb'
+    }
+  },
 };
 
 let specific = {

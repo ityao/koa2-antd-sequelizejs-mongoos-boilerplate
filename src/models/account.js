@@ -5,15 +5,7 @@ import {User} from './mysql/index';
 const Account = {}
 
 Account.findOne = async function (id, cb) {
-
-    return await User.findById(id)
-
-    //Mock Scripts
-    /*
-    const account = {"id": 1, "username" : "test", "password" : "test"}
-    cb(null, account)
-    */
-
+  return await User.findById(id)
 }
 
 Account.verify = async function(username, password) {
@@ -25,7 +17,7 @@ Account.verify = async function(username, password) {
   }else{
     return null
   }
-  
+
 }
 
 export default Account;
